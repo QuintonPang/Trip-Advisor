@@ -28,7 +28,7 @@ const App = () => {
       getPlacesData(type,bounds.sw,bounds.ne)
       .then(d=>{
         console.log(d)
-        setPlaces(d)
+        setPlaces(d.filter(place=>place.name&&place.num_reviews>0))
         setFilteredPlaces([])
         setLoading(false)
       })}
